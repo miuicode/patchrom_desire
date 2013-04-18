@@ -1,0 +1,32 @@
+From 2bbc79145926b0d6502a2b4c1bb876c98198bb41 Mon Sep 17 00:00:00 2001
+From: mochangming <mochangming@xiaomi.com>
+Date: Wed, 30 Jan 2013 11:35:03 +0800
+Subject: [PATCH] fix available internal memory
+
+---
+ .../android/settings/MiuiDeviceInfoSettings.smali  |    8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+--- a/Settings/smali/com/android/settings/MiuiDeviceInfoSettings.smali
++++ b/Settings/smali/com/android/settings/MiuiDeviceInfoSettings.smali
+@@ -351,13 +351,13 @@
+     add-long v6, v6, v29
+ 
+     :cond_0
+-    sget-boolean v29, Lmiui/os/Build;->IS_MITWO:Z
++    #sget-boolean v29, Lmiui/os/Build;->IS_MITWO:Z
+ 
+-    if-nez v29, :cond_1
++    #if-nez v29, :cond_1
+ 
+-    sget-boolean v29, Lmiui/os/Build;->IS_NEXUS_S:Z
++    #sget-boolean v29, Lmiui/os/Build;->IS_NEXUS_S:Z
+ 
+-    if-eqz v29, :cond_2
++    #if-eqz v29, :cond_2
+ 
+     :cond_1
+     invoke-static {}, Landroid/os/Environment;->getDataDirectory()Ljava/io/File;
+-- 
+1.7.9.5
+

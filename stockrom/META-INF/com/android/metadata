@@ -1,0 +1,3 @@
+post-build=htc_wwe/htc_bravo/bravo:2.3.3/GRI40/96875.1:user/release-keys
+post-timestamp=1352548974
+pre-device=bravo
